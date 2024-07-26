@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+body {
+	padding: 0;
+	margin: 0;
+	font-family: 'Quicksand', sans-serif;
+}
+
+.container {
+	position: relative;
+}
+
+.container img {
+	display: block;
+	width: 100%;
+}
+
+nav {
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	right: 0;
+	top: 0;
+	padding: 0 5em;
+	height: 6em;
+	background-color: rgba(255,255,255,0.00);
+	transition-duration: 0.2s;
+}
+
+nav .title {
+	float: left;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	font-size: 2.5vw;
+	color: #fff;
+}
+
+nav .title a {
+	text-decoration: none;
+	color: #fff;
+}
+
+nav .title a:visited {
+	text-decoration: none;
+	color: #fff;
+}
+
+nav .links {
+	float: right;
+	padding: 0;
+	margin: 0;
+	width: 50vw;
+	height: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+nav .links li {
+	list-style: none;
+}
+
+nav .links a {
+	display: block;
+	padding: 1em;
+	font-size: 1.2vw;
+	font-weight: bold;
+	color: #fff;
+	text-decoration: none;
+}
+
+nav .links a:hover{
+	-webkit-transform: translateY(-2px);
+	-moz-transform: translateY(-2px);
+	transform: translateY(-2px);
+	border-bottom: 2px white solid;
+}
+
+#nav-toggle {
+	position: absolute;
+	top: -100px;
+}
+
+nav .icon-burger {
+	display: none;
+	position: absolute;
+	right: 2em;
+	top: 2em;
+	transform: translateY(-50%);
+}
+
+nav .icon-burger .line {
+	width: 2em;
+	height: 0.2em;
+	background-color: #fff;
+	margin-bottom: 0.4em;
+	transition: all .3s ease-in-out;
+}
+
+.bgColor {
+	box-shadow: 0 2px 5px 0 rgba(0,0,0,0.225);
+}
+
+.bgColor2 {
+	background-color: rgba(0,0,0,0.71);
+	box-shadow: 0 2px 5px 0 rgba(0,0,0,0.225);
+}
+
+/*mobile css*/
+
+@media screen and (max-width: 1070px) {
+	nav {
+		height: 10vw;
+	}
+
+	nav .title {
+		display: none;
+	}
+
+	nav .links {
+		float: none;
+		position: fixed;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 100%;
+		width: auto;
+		height: auto;
+		flex-direction: column;
+		justify-content: space-evenly;
+		background-color: rgba(0, 0, 0, 0.9);
+		overflow: hidden;
+		box-sizing: border-box;
+	}
+
+	nav .links a {
+		font-size: 3vw;
+	}
+
+	nav :checked ~ .links {
+		bottom: 0;
+	}
+
+	nav .icon-burger {
+		display: block;
+	}
+
+	nav :checked ~ .icon-burger .line:nth-child(1) {
+		transform: translateY(10px) rotate(225deg);
+	}
+
+	nav :checked ~ .icon-burger .line:nth-child(3) {
+		transform: translateY(-10px) rotate(-225deg);
+	}
+
+	nav :checked ~ .icon-burger .line:nth-child(2) {
+		opacity: 0;
+	}
+}
