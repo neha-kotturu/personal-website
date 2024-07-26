@@ -219,6 +219,13 @@
 				}
 			}	
 			window.addEventListener("scroll", changeBg);
+
+			//close the navbar once a link is clicked
+			document.querySelectorAll('.links a').forEach(link => {
+				link.addEventListener('click', () => {
+					document.getElementById('nav-toggle').checked = false;
+				});
+			});
 		</script>
 
 	</body>
