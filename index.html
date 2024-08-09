@@ -10,14 +10,6 @@
 		<link rel="stylesheet" type="text/css" href="css/nav.css">
 		<link rel="stylesheet" type="text/css" href="css/home.css">
 		<link rel="icon" href="images/logo.png">
-		<!-- Google tag (gtag.js) -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-DRKTJ2BQXF"></script>
-		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
-			gtag('config', 'G-DRKTJ2BQXF');
-		</script>
 	</head>
 
 	<body>
@@ -122,10 +114,10 @@
 			</div>
 			
 			<div class="project-box">
-				<img src="images/p2.png" alt="Neha's ML Project using the World Happiness Report Dataset">
+				<img src="images/p2.png" alt="Neha's My Pantry Tracker Project for inventory management">
 				<div class="project-description">
-					<h3>WHR Prediction</h3><br><br>
-					<p>Used the World Happiness Report dataset to predict countries' happiness scores based on their socioeconomic factors through a Random Forest ML model. Link to be added after completion.</p>
+					<h3>My Pantry Tracker</h3><br><br>
+					<p>A full-stack inventory management site that allows users to add and keep track of their inventory items.</p>
 				</div>
 			</div> 
 		</div>
@@ -227,8 +219,7 @@
 				}
 			}	
 			window.addEventListener("scroll", changeBg);
-
-			//close the navbar once a link is clicked
+			//close the navbar when a link is clicked
 			document.querySelectorAll('.links a').forEach(link => {
 				link.addEventListener('click', () => {
 					document.getElementById('nav-toggle').checked = false;
