@@ -161,60 +161,60 @@ export default function App() {
                   </div>
 
                   <div className="about-section">
-                  <h3>Skills</h3>
-                  <div className="skills-grid">
-                    <div className="skill-category">
-                      <h4>Languages</h4>
-                      <div className="skill-blocks">
-                        <span className="skill-block">Python</span>
-                        <span className="skill-block">Java</span>
-                        <span className="skill-block">C</span>
-                        <span className="skill-block">C#</span>
-                        <span className="skill-block">JavaScript</span>
-                        <span className="skill-block">Typescript</span>
-                        <span className="skill-block">HTML/CSS</span>
+                    <h3>Skills</h3>
+                    <div className="skills-grid">
+                      <div className="skill-category">
+                        <h4>Languages</h4>
+                        <div className="skill-blocks">
+                          <span className="skill-block">Python</span>
+                          <span className="skill-block">Java</span>
+                          <span className="skill-block">C</span>
+                          <span className="skill-block">C#</span>
+                          <span className="skill-block">JavaScript</span>
+                          <span className="skill-block">Typescript</span>
+                          <span className="skill-block">HTML/CSS</span>
+                        </div>
                       </div>
-                    </div>
                     </div>
                     <div className="about-section">
-                    <div className="skill-category">
-                      <h4>Frameworks</h4>
-                      <div className="skill-blocks">
-                        <span className="skill-block">React.js</span>
-                        <span className="skill-block">Next.js</span>
-                        <span className="skill-block">Express.js</span>
-                        <span className="skill-block">Tailwind CSS</span>
+                      <div className="skill-category">
+                        <h4>Frameworks</h4>
+                        <div className="skill-blocks">
+                          <span className="skill-block">React.js</span>
+                          <span className="skill-block">Next.js</span>
+                          <span className="skill-block">Express.js</span>
+                          <span className="skill-block">Tailwind CSS</span>
+                        </div>
+                      </div>
+                      <div className="skill-category">
+                        <h4>Tools</h4>
+                        <div className="skill-blocks">
+                          <span className="skill-block">Git</span>
+                          <span className="skill-block">Terraform</span>
+                          <span className="skill-block">Datadog</span>
+                          <span className="skill-block">Google Cloud Platform</span>
+                          <span className="skill-block">VS Code</span>
+                        </div>
+                      </div>
+                      <div className="skill-category">
+                        <h4>AI/ML</h4>
+                        <div className="skill-blocks">
+                          <span className="skill-block">PyTorch</span>
+                          <span className="skill-block">TensorFlow</span>
+                          <span className="skill-block">Scikit-Learn</span>
+                          <span className="skill-block">LLMs</span>
+                          <span className="skill-block">NLP</span>
+                          <span className="skill-block">Computer Vision</span>
+                        </div>
                       </div>
                     </div>
-                    <div className="skill-category">
-                      <h4>Tools</h4>
-                      <div className="skill-blocks">
-                        <span className="skill-block">Git</span>
-                        <span className="skill-block">Terraform</span>
-                        <span className="skill-block">Datadog</span>
-                        <span className="skill-block">Google Cloud Platform</span>
-                        <span className="skill-block">VS Code</span>
-                      </div>
-                    </div>
-                    <div className="skill-category">
-                      <h4>AI/ML</h4>
-                      <div className="skill-blocks">
-                        <span className="skill-block">PyTorch</span>
-                        <span className="skill-block">TensorFlow</span>
-                        <span className="skill-block">Scikit-Learn</span>
-                        <span className="skill-block">LLMs</span>
-                        <span className="skill-block">NLP</span>
-                        <span className="skill-block">Computer Vision</span>
-                      </div>
-                    </div>
-                  </div>
                   </div>
 
                   <div className="about-section">
-                  <h3>Currently</h3>
-                  <p>📺 Watching: Arrested Development</p>
-                  <p>📖 Reading: Shutter Island by Dennis Lehane</p>
-                  <p>👩‍💻 Working: Summer 2025 SWE Intern at UKG</p>
+                    <h3>Currently</h3>
+                    <p>📺 Watching: Arrested Development</p>
+                    <p>📖 Reading: Shutter Island by Dennis Lehane</p>
+                    <p>👩‍💻 Working: Summer 2025 SWE Intern at UKG</p>
                   </div>
                 </div>
               </div>
