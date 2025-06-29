@@ -2,16 +2,15 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Code2, BookOpen, Sparkles, Mail, Linkedin, Github, FileText } from 'lucide-react';
 import './App.css';
-import UKG from './assets/UKG.png'
-import Microsoft from './assets/Microsoft.png'
-import UMass from './assets/UMass.png'
+import UKG from './assets/UKG.png';
+import Microsoft from './assets/Microsoft.png';
+import UMass from './assets/UMass.png';
 import resumePdf from './assets/resume.pdf';
 
 const tabs = [
   { id: 'about', icon: <BookOpen size={16} />, label: 'About' },
   { id: 'experience', icon: <BookOpen size={16} />, label: 'Experience' },
   { id: 'projects', icon: <Code2 size={16} />, label: 'Projects' },
-  { id: 'contact', icon: <Sparkles size={16} />, label: 'Contact' },
 ];
 
 const projects = [
@@ -103,7 +102,6 @@ const experiences = [
   }
 ];
 
-
 const fadeVariant = {
   hidden: { opacity: 0, y: 10 },
   show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
@@ -153,9 +151,90 @@ export default function App() {
               initial="hidden"
               animate="show"
               exit="hidden">
-              <p>🎓Honors Computer Science major and Mathematics minor at UMass Amherst</p>
-              <p>🤖Passionate about AI and Machine Learning</p>
-              <p>👩‍💻Current Summer 2025 SRE Intern at UKG</p>
+              <div className="about-content">
+                <div className="about-text">
+                  <div className="about-section">
+                    <h3>Education</h3>
+                    <p>🎓 University of Massachusetts Amherst - B.S. in Computer Science, Minor in Mathematics</p>
+                    <p>📅 Expected Graduation: Dec 2026</p>
+                    <p>🏆 Commonwealth Honors College Scholar</p>
+                  </div>
+
+                  <div className="about-section">
+                  <h3>Skills</h3>
+                  <div className="skills-grid">
+                    <div className="skill-category">
+                      <h4>Languages</h4>
+                      <div className="skill-blocks">
+                        <span className="skill-block">Python</span>
+                        <span className="skill-block">Java</span>
+                        <span className="skill-block">C</span>
+                        <span className="skill-block">C#</span>
+                        <span className="skill-block">JavaScript</span>
+                        <span className="skill-block">Typescript</span>
+                        <span className="skill-block">HTML/CSS</span>
+                      </div>
+                    </div>
+                    </div>
+                    <div className="about-section">
+                    <div className="skill-category">
+                      <h4>Frameworks</h4>
+                      <div className="skill-blocks">
+                        <span className="skill-block">React.js</span>
+                        <span className="skill-block">Next.js</span>
+                        <span className="skill-block">Express.js</span>
+                        <span className="skill-block">Tailwind CSS</span>
+                      </div>
+                    </div>
+                    <div className="skill-category">
+                      <h4>Tools</h4>
+                      <div className="skill-blocks">
+                        <span className="skill-block">Git</span>
+                        <span className="skill-block">Terraform</span>
+                        <span className="skill-block">Datadog</span>
+                        <span className="skill-block">Google Cloud Platform</span>
+                        <span className="skill-block">VS Code</span>
+                      </div>
+                    </div>
+                    <div className="skill-category">
+                      <h4>AI/ML</h4>
+                      <div className="skill-blocks">
+                        <span className="skill-block">PyTorch</span>
+                        <span className="skill-block">TensorFlow</span>
+                        <span className="skill-block">Scikit-Learn</span>
+                        <span className="skill-block">LLMs</span>
+                        <span className="skill-block">NLP</span>
+                        <span className="skill-block">Computer Vision</span>
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+
+                  <div className="about-section">
+                  <h3>Currently</h3>
+                  <p>📺 Watching: Arrested Development</p>
+                  <p>📖 Reading: Shutter Island by Dennis Lehane</p>
+                  <p>👩‍💻 Working: Summer 2025 SWE Intern at UKG</p>
+                  </div>
+                </div>
+              </div>
+              <div className="contact-bar">
+                <div className="contact-line"></div>
+                <div className="contact-icons">
+                  <a href="mailto:nekotturu@gmail.com" title="Email">
+                    <Mail size={20} />
+                  </a>
+                  <a href="https://www.linkedin.com/in/neha-kotturu" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                    <Linkedin size={20} />
+                  </a>
+                  <a href="https://github.com/neha-kotturu" target="_blank" rel="noopener noreferrer" title="GitHub">
+                    <Github size={20} />
+                  </a>
+                  <a href={resumePdf} target="_blank" rel="noopener noreferrer" title="Resume">
+                    <FileText size={20} />
+                  </a>
+                </div>
+              </div>
             </motion.div>
           )}
 
@@ -226,80 +305,6 @@ export default function App() {
                   </div>
                 </motion.div>
               ))}
-            </motion.div>
-          )}
-
-          {tab === 'contact' && (
-            <motion.div
-              key="contact"
-              className="grid"
-              variants={fadeVariant}
-              initial="hidden"
-              animate="show"
-              exit="hidden">
-              <motion.div
-                className="card"
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-                onClick={() => window.open('mailto:nekotturu@gmail.com', '_blank')}
-                style={{ cursor: 'pointer' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                  <Mail size={20} />
-                  <h3>Email</h3>
-                </div>
-                <p>Get in touch via email</p>
-                <div className="tags">
-                  <span>Gmail</span>
-                </div>
-              </motion.div>
-
-              <motion.div
-                className="card"
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-                onClick={() => window.open('https://www.linkedin.com/in/neha-kotturu', '_blank')}
-                style={{ cursor: 'pointer' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                  <Linkedin size={20} />
-                  <h3>LinkedIn</h3>
-                </div>
-                <p>Connect professionally</p>
-                <div className="tags">
-                  <span>Social</span>
-                </div>
-              </motion.div>
-
-              <motion.div
-                className="card"
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-                onClick={() => window.open('https://github.com/neha-kotturu', '_blank')}
-                style={{ cursor: 'pointer' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                  <Github size={20} />
-                  <h3>GitHub</h3>
-                </div>
-                <p>View my projects</p>
-                <div className="tags">
-                  <span>Code</span>
-                </div>
-              </motion.div>
-
-              <motion.div
-                className="card"
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-                onClick={() => window.open(resumePdf, '_blank')}
-                style={{ cursor: 'pointer' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                  <FileText size={20} />
-                  <h3>Resume</h3>
-                </div>
-                <p>Download my resume</p>
-                <div className="tags">
-                  <span>PDF</span>
-                </div>
-              </motion.div>
             </motion.div>
           )}
         </AnimatePresence>
