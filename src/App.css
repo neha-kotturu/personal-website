@@ -1,0 +1,186 @@
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: linear-gradient(to bottom right, #0f0f0f, #1a1a1a);
+  color: white;
+  overflow-x: hidden;
+}
+
+.container {
+  padding: 2rem 3vw;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header-section {
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.highlight {
+  color: #a855f7;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #bbb;
+  margin-bottom: 2rem;
+}
+
+.tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.tabs button {
+  background: #2a2a2a;
+  border: none;
+  color: #ccc;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  transition: background-color 0.25s ease;
+}
+
+.tabs button.active {
+  background: #a855f7;
+  color: white;
+}
+
+.content-section {
+  flex: 1;
+}
+
+.grid {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #222;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #000;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  flex: 1;
+  min-width: 260px;
+  max-width: calc(33.33% - 1rem);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 15px #a855f7aa;
+}
+
+.card h3 {
+  margin: 0 0 0.5rem;
+}
+
+.card .tags span {
+  background: #a855f7;
+  color: white;
+  font-size: 0.75rem;
+  padding: 0.2rem 0.5rem;
+  margin-right: 0.3rem;
+  border-radius: 4px;
+}
+
+.about,
+.fun {
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 1rem 0;
+}
+
+.experience-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.experience-card {
+  background: #222;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #000;
+  transition: all 0.3s ease;
+}
+
+.experience-card:hover {
+  box-shadow: 0 4px 15px #a855f7aa;
+}
+
+.experience-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.company-logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+  background: white;
+  padding: 5px;
+}
+
+.company-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.experience-subheader {
+  display: flex;
+  gap: 1rem;
+  color: #bbb;
+  font-size: 0.9rem;
+  margin-top: 0.3rem;
+  flex-wrap: wrap;
+}
+
+.experience-role {
+  font-weight: 500;
+}
+
+.experience-period {
+  opacity: 0.8;
+}
+
+.experience-description ul {
+  padding-left: 1.2rem;
+  margin: 0.5rem 0 0 0;
+}
+
+.experience-description li {
+  margin-bottom: 0.4rem;
+  line-height: 1.5;
+}
