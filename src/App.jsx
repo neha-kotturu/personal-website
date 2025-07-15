@@ -209,13 +209,6 @@ export default function App() {
                       </div>
                     </div>
                   </div>
-
-                  <div className="about-section">
-                    <h3>Currently</h3>
-                    <p>📺 Watching: Arrested Development</p>
-                    <p>📖 Reading: Shutter Island by Dennis Lehane</p>
-                    <p>👩‍💻 Working: Summer 2025 SWE Intern at UKG</p>
-                  </div>
                 </div>
               </div>
               <div className="contact-bar">
