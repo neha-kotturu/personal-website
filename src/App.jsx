@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Code2, BookOpen, Sparkles, Mail, Linkedin, Github, FileText } from 'lucide-react';
 import './App.css';
+import Symbotic from './assets/Symbotic.jpeg'
 import UKG from './assets/UKG.png';
 import Microsoft from './assets/Microsoft.png';
 import UMass from './assets/UMass.png';
@@ -48,10 +49,19 @@ const projects = [
 
 const experiences = [
   {
+    company: "Symbotic",
+    role: "Co-op",
+    period: "Jan 2026 - May 2026",
+    description: ["Incoming Spring Co-op at Wilmington HQ"],
+    logo: Symbotic
+  },
+  {
     company: "UKG",
     role: "SWE Intern",
-    period: "Summer 2025",
-    description: "Current SWE intern at UKG",
+    period: "May 2025 - Aug 2025",
+    description: ["Expanded a scalable observability framework through Terraform, increasing monitoring coverage of critical services by over 65% and improving incident visibility",
+                  "Designed global ELBs to improve traffic distribution across services, enabling high availability and reducing regional failover time",
+                  "Developed a DNS-based pod redirection mechanism to route users to the appropriate pod based on company association, supporting multi-tenant infrastructure optimization"],
     logo: UKG
   },
   {
@@ -69,10 +79,10 @@ const experiences = [
     role: "Salesforce Intern",
     period: "May 2024 - May 2025",
     description: [
-      "Maintained the contacts database by cleaning up duplicates, enhancing data integrity",
       "Resolved 300+ online support tickets from staff and faculty, delivering timely solutions",
-      "Built 7 forms on FormAssembly with Salesforce integration for multiple departments, streamlining data collection processeses",
-      "Wrote custom APEX script to import data from Boomi REST Service and SQL Database into Salesforce"
+      "Built 7+ forms on FormAssembly with Salesforce integration for multiple departments, streamlining data collection processes",
+      "Wrote custom APEX script to import data from Boomi REST Service and SQL Database into Salesforce",
+      "Assisted with other projects and internal tools as needed"
     ],
     logo: UMass
   },
@@ -81,10 +91,10 @@ const experiences = [
     role: "Enterprise Applications Support Intern",
     period: "Feb 2024 - May 2024",
     description: [
-      "Enhanced SPIRE site reliability by performing rigorous manual testing of over 140 features after new patch releases",
-      "Contributed to the IT KnowledgeBase with over 20 articles containing detailed documentation and clearer support for SPIRE services",
-      "Reviewed and updated over 200 existing IT support articles",
-      "Created over 7 instructional videos using Camtasia and Audacity to support user training and improve knowledge dissemination"
+      "Enhanced SPIRE site reliability by performing rigorous manual testing of 140+ features after new patch releases",
+      "Contributed to the IT KnowledgeBase with 20+ articles containing detailed documentation and clearer support for SPIRE services",
+      "Reviewed and updated 200+ existing IT support articles",
+      "Created 7+ instructional videos using Camtasia and Audacity to support user training and improve knowledge dissemination"
     ],
     logo: UMass
   },
@@ -95,7 +105,7 @@ const experiences = [
     description: [
       "Provided in-person technical assistance to students, faculty, and alumni at UMass Amherst",
       "Responded to and managed online tickets on ServiceNow",
-      "Took over 250+ tickets and assisted with/resolved many more",
+      "Took 250+ tickets and assisted with/resolved many more",
       "Provided live online support to clients through Bomgar"
     ],
     logo: UMass
@@ -155,8 +165,9 @@ export default function App() {
                 <div className="about-text">
                   <div className="about-section">
                     <h3>Education</h3>
-                    <p>🎓 University of Massachusetts Amherst - B.S. in Computer Science, Minor in Mathematics</p>
-                    <p>📅 Expected Graduation: Dec 2026</p>
+                    <p>🎓 UMass Amherst - MS in Computer Science (current)</p>
+                    <p>👩‍🎓 UMass Amherst - BS in Computer Science, Minor in Mathematics (graduated)</p>
+                    <p>📅 Expected MS Graduation: Dec 2026</p>
                     <p>🏆 Commonwealth Honors College Scholar</p>
                   </div>
 
