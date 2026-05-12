@@ -137,11 +137,6 @@ const experiences = [
   }
 ];
 
-const fadeVariant = {
-  hidden: { opacity: 0, y: 10 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-};
-
 export default function App() {
   const [tab, setTab] = useState('about');
   const [expandedExp, setExpandedExp] = useState(null);
@@ -160,27 +155,14 @@ export default function App() {
 
   return (
     <main className="container">
-      <motion.div
-        className="scroll-progress"
-        style={{ scaleX }}
-      />
-
       <div className="header-section">
-        <motion.h1
-          className="title"
-          initial={{ opacity: 0, y: -30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}>
+        <h1 className="title">
           <span className="gradient-text">Hey, I'm Neha</span> 👋
-        </motion.h1>
+        </h1>
 
-        <motion.p
-          className="subtitle"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.4 }}>
+        <p className="subtitle">
           Welcome to my sandbox!
-        </motion.p>
+        </p>
 
         <div className="tabs">
           {tabs.map((t) => (
@@ -195,436 +177,237 @@ export default function App() {
       </div>
 
       <div className="content-section">
-        <AnimatePresence mode="wait">
-          {tab === 'about' && (
-            <motion.div
-              key="about"
-              className="about"
-              variants={fadeVariant}
-              initial="hidden"
-              animate="show"
-              exit="hidden">
-              <div className="about-content">
-                <div className="about-text">
-                  <motion.div 
-                    className="about-section"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.3 }}
-                    transition={{ duration: 0.6 }}>
-                    <h3>Education</h3>
-                    <motion.p
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.1 }}>
-                      🎓 UMass Amherst - MS in Computer Science (current)
-                    </motion.p>
-                    <motion.p
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.2 }}>
-                      👩‍🎓 UMass Amherst - BS in Computer Science, Minor in Mathematics (graduated)
-                    </motion.p>
-                    <motion.p
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.3 }}>
-                      {/* 📅 Expected MS Graduation: Dec 2026 */}
-                    </motion.p>
-                    <motion.p
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.4 }}>
-                      🏆 Commonwealth Honors College Scholar
-                    </motion.p>
-                  </motion.div>
+        {tab === 'about' && (
+          <div className="about">
+            <div className="about-content">
+              <div className="about-text">
+                <div className="about-section">
+                  <h3>Education</h3>
+                  <p>🎓 UMass Amherst - MS in Computer Science (current)</p>
+                  <p>👩‍🎓 UMass Amherst - BS in Computer Science, Minor in Mathematics (graduated)</p>
+                  <p>🏆 Commonwealth Honors College Scholar</p>
+                </div>
 
-                  <motion.div 
-                    className="about-section"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.2 }}
-                    transition={{ duration: 0.6, delay: 0.2 }}>
-                    <h3>Skills</h3>
-                    <div className="skills-grid">
-                      <div className="skill-category">
-                        <h4>Languages</h4>
-                        <div className="skill-blocks">
-                          {['Python', 'Java', 'C#', 'C', 'JavaScript', 'Typescript'].map((skill, idx) => (
-                            <motion.span 
-                              key={skill}
-                              className="skill-block"
-                              initial={{ opacity: 0, scale: 0, rotate: -180 }}
-                              whileInView={{ 
-                                opacity: 1, 
-                                scale: 1, 
-                                rotate: 0,
-                                transition: { 
-                                  delay: idx * 0.05,
-                                  type: "spring",
-                                  stiffness: 200
-                                }
-                              }}
-                              viewport={{ once: true }}
-                              whileHover={{ 
-                                scale: 1.1, 
-                                rotate: [0, -5, 5, 0],
-                                transition: { duration: 0.3 }
-                              }}>
-                              {skill}
-                            </motion.span>
-                          ))}
-                        </div>
+                <div className="about-section">
+                  <h3>Skills</h3>
+                  <div className="skills-grid">
+                    <div className="skill-category">
+                      <h4>Languages</h4>
+                      <div className="skill-blocks">
+                        {['Python', 'Java', 'C#', 'C', 'JavaScript', 'Typescript'].map((skill) => (
+                          <span key={skill} className="skill-block">
+                            {skill}
+                          </span>
+                        ))}
                       </div>
                     </div>
-                    <div className="about-section">
-                      <div className="skill-category">
-                        <h4>Web & Application Development</h4>
-                        <div className="skill-blocks">
-                          {['HTML/CSS', 'React.js', 'Next.js', 'Express.js', 'Tailwind CSS', 'Rest APIs', 'Microservices'].map((skill, idx) => (
-                            <motion.span 
-                              key={skill}
-                              className="skill-block"
-                              initial={{ opacity: 0, x: -50 }}
-                              whileInView={{ 
-                                opacity: 1, 
-                                x: 0,
-                                transition: { delay: idx * 0.1 }
-                              }}
-                              viewport={{ once: true }}
-                              whileHover={{ scale: 1.1, y: -2 }}>
-                              {skill}
-                            </motion.span>
-                          ))}
-                        </div>
-                      </div>
-                      <div className="skill-category">
-                        <h4>Tools</h4>
-                        <div className="skill-blocks">
-                          {['Git', 'Terraform', 'Datadog', 'Salesforce', 'Google Cloud Platform', 'RabbitMQ', 'Microsoft SSMS', 'Visual Studio'].map((skill, idx) => (
-                            <motion.span 
-                              key={skill}
-                              className="skill-block"
-                              initial={{ opacity: 0, x: -50 }}
-                              whileInView={{ 
-                                opacity: 1, 
-                                x: 0,
-                                transition: { delay: idx * 0.1 }
-                              }}
-                              viewport={{ once: true }}
-                              whileHover={{ scale: 1.1, y: -2 }}>
-                              {skill}
-                            </motion.span>
-                          ))}
-                        </div>
-                      </div>
-                      <div className="skill-category">
-                        <h4>AI/ML</h4>
-                        <div className="skill-blocks">
-                          {['PyTorch', 'TensorFlow', 'Scikit-Learn', 'LLMs', 'NLP', 'Computer Vision'].map((skill, idx) => (
-                            <motion.span 
-                              key={skill}
-                              className="skill-block"
-                              initial={{ opacity: 0, x: -50 }}
-                              whileInView={{ 
-                                opacity: 1, 
-                                x: 0,
-                                transition: { delay: idx * 0.1 }
-                              }}
-                              viewport={{ once: true }}
-                              whileHover={{ scale: 1.1, y: -2 }}>
-                              {skill}
-                            </motion.span>
-                          ))}
-                        </div>
+                  </div>
+                  <div className="about-section">
+                    <div className="skill-category">
+                      <h4>Web & Application Development</h4>
+                      <div className="skill-blocks">
+                        {['HTML/CSS', 'React.js', 'Next.js', 'Express.js', 'Tailwind CSS', 'Rest APIs', 'Microservices'].map((skill) => (
+                          <span key={skill} className="skill-block">
+                            {skill}
+                          </span>
+                        ))}
                       </div>
                     </div>
-                  </motion.div>
+                    <div className="skill-category">
+                      <h4>Tools</h4>
+                      <div className="skill-blocks">
+                        {['Git', 'Terraform', 'Datadog', 'Salesforce', 'Google Cloud Platform', 'RabbitMQ', 'Microsoft SSMS', 'Visual Studio'].map((skill) => (
+                          <span key={skill} className="skill-block">
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    <div className="skill-category">
+                      <h4>AI/ML</h4>
+                      <div className="skill-blocks">
+                        {['PyTorch', 'TensorFlow', 'Scikit-Learn', 'LLMs', 'NLP', 'Computer Vision'].map((skill) => (
+                          <span key={skill} className="skill-block">
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <motion.div 
-                className="contact-bar"
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.3 }}>
-                <div className="contact-line"></div>
-                <div className="contact-icons">
-                  <motion.a 
-                    href="mailto:nekotturu@gmail.com" 
-                    title="Email"
-                    initial={{ opacity: 0, scale: 0 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.4, type: "spring" }}>
-                    <Mail size={20} />
-                  </motion.a>
-                  <motion.a 
-                    href="https://www.linkedin.com/in/neha-kotturu" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    title="LinkedIn"
-                    initial={{ opacity: 0, scale: 0 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.5, type: "spring" }}>
-                    <Linkedin size={20} />
-                  </motion.a>
-                  <motion.a 
-                    href="https://github.com/neha-kotturu" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    title="GitHub"
-                    initial={{ opacity: 0, scale: 0 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.6, type: "spring" }}>
-                    <Github size={20} />
-                  </motion.a>
-                  <motion.a 
-                    href={resumePdf} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    title="Resume"
-                    initial={{ opacity: 0, scale: 0 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.7, type: "spring" }}>
-                    <FileText size={20} />
-                  </motion.a>
-                </div>
-              </motion.div>
-            </motion.div>
-          )}
+            </div>
+            <div className="contact-bar">
+              <div className="contact-line"></div>
+              <div className="contact-icons">
+                <a href="mailto:nekotturu@gmail.com" title="Email">
+                  <Mail size={20} />
+                </a>
+                <a href="https://www.linkedin.com/in/neha-kotturu" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                  <Linkedin size={20} />
+                </a>
+                <a href="https://github.com/neha-kotturu" target="_blank" rel="noopener noreferrer" title="GitHub">
+                  <Github size={20} />
+                </a>
+                <a href={resumePdf} target="_blank" rel="noopener noreferrer" title="Resume">
+                  <FileText size={20} />
+                </a>
+              </div>
+            </div>
+          </div>
+        )}
 
-          {tab === 'experience' && (
-            <motion.div
-              key="experience"
-              className="experience-section"
-              variants={fadeVariant}
-              initial="hidden"
-              animate="show"
-              exit="hidden">
-              <Timeline position="right">
-                {experiences.map((exp, index) => (
-                  <TimelineItem key={index}>
-                    <TimelineOppositeContent style={{ flex: 0.2 }} className="timeline-period-side">
-                      {exp.period}
-                    </TimelineOppositeContent>
-                    <TimelineSeparator>
-                      <motion.div
-                        whileHover={{ scale: 1.2 }}
-                        transition={{ type: "spring", stiffness: 300 }}>
-                        <TimelineDot 
-                          sx={{
-                            bgcolor: hoveredExp === index ? '#3b82f6' : '#a855f7',
-                            width: 20,
-                            height: 20,
-                            border: `3px solid ${hoveredExp === index ? '#3b82f6' : '#a855f7'}`,
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            transition: 'all 0.3s ease',
-                          }}
-                        >
-                          <div style={{
-                            width: 8,
-                            height: 8,
-                            background: 'white',
-                            borderRadius: '50%'
-                          }} />
-                        </TimelineDot>
-                      </motion.div>
-                      {index < experiences.length - 1 && (
-                        <TimelineConnector 
-                          sx={{
-                            background: 'linear-gradient(to bottom, #a855f7, #3b82f6)',
-                            width: 4,
-                          }}
-                        />
-                      )}
-                    </TimelineSeparator>
-                    <TimelineContent>
-                      <motion.div
-                        className={`experience-card ${expandedExp === index ? 'expanded' : ''}`}
-                        initial={{ opacity: 0, x: 50, scale: 0.9 }}
-                        whileInView={{ 
-                          opacity: 1, 
-                          x: 0, 
-                          scale: 1,
-                          transition: { 
-                            duration: 0.5,
-                            delay: 0.1,
-                            ease: "easeOut"
-                          }
+        {tab === 'experience' && (
+          <div className="experience-section">
+            <Timeline position="right">
+              {experiences.map((exp, index) => (
+                <TimelineItem key={index}>
+                  <TimelineOppositeContent style={{ flex: 0.2 }} className="timeline-period-side">
+                    {exp.period}
+                  </TimelineOppositeContent>
+                  <TimelineSeparator>
+                    <div
+                      onMouseEnter={() => setHoveredExp(index)}
+                      onMouseLeave={() => setHoveredExp(null)}
+                      style={{ cursor: 'pointer' }}>
+                      <TimelineDot 
+                        sx={{
+                          bgcolor: hoveredExp === index ? '#3b82f6' : '#a855f7',
+                          width: 20,
+                          height: 20,
+                          border: `3px solid ${hoveredExp === index ? '#3b82f6' : '#a855f7'}`,
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          transition: 'all 0.3s ease',
                         }}
-                        viewport={{ once: true, amount: 0.3 }}
-                        onMouseEnter={() => setHoveredExp(index)}
-                        onMouseLeave={() => setHoveredExp(null)}
-                        whileHover={{ 
-                          scale: 1.02,
-                          boxShadow: '0 8px 30px rgba(168, 85, 247, 0.3)'
+                      >
+                        <div style={{
+                          width: 8,
+                          height: 8,
+                          background: 'white',
+                          borderRadius: '50%'
+                        }} />
+                      </TimelineDot>
+                    </div>
+                    {index < experiences.length - 1 && (
+                      <TimelineConnector 
+                        sx={{
+                          background: 'linear-gradient(to bottom, #a855f7, #3b82f6)',
+                          width: 4,
                         }}
-                        onClick={() => toggleExpand(index)}
-                        style={{ cursor: 'pointer' }}>
-                        
-                        <div className="experience-header">
-                          <motion.div 
-                            className="company-logo"
-                            whileHover={{ rotate: 360 }}
-                            transition={{ duration: 0.5 }}>
-                            <img src={exp.logo} alt={`${exp.company} logo`} />
-                          </motion.div>
-                          <div style={{ flex: 1 }}>
-                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                              <h3>{exp.company}</h3>
-                              <motion.div
-                                animate={{ rotate: expandedExp === index ? 180 : 0 }}
-                                transition={{ duration: 0.3 }}>
-                                <ChevronDown size={20} color="#a855f7" />
-                              </motion.div>
-                            </div>
-                            <div className="experience-subheader">
-                              <span className="experience-role">{exp.role}</span>
-                              <span className="experience-period-mobile">{exp.period}</span>
-                            </div>
-                            {exp.tags && (
-                              <div className="experience-tags">
-                                {exp.tags.map((tag, i) => (
-                                  <motion.span 
-                                    key={i}
-                                    className="experience-tag"
-                                    whileHover={{ scale: 1.1 }}
-                                    whileTap={{ scale: 0.95 }}>
-                                    {tag}
-                                  </motion.span>
-                                ))}
-                              </div>
-                            )}
-                          </div>
+                      />
+                    )}
+                  </TimelineSeparator>
+                  <TimelineContent>
+                    <div
+                      className={`experience-card ${expandedExp === index ? 'expanded' : ''}`}
+                      onMouseEnter={() => setHoveredExp(index)}
+                      onMouseLeave={() => setHoveredExp(null)}
+                      onClick={() => toggleExpand(index)}
+                      style={{ cursor: 'pointer' }}>
+                      
+                      <div className="experience-header">
+                        <div 
+                          className="company-logo"
+                          style={{ transition: 'transform 0.5s' }}>
+                          <img src={exp.logo} alt={`${exp.company} logo`} />
                         </div>
-                        
-                        <AnimatePresence>
-                          {expandedExp === index && (
-                            <motion.div
-                              className="experience-description"
-                              initial={{ height: 0, opacity: 0 }}
-                              animate={{ height: 'auto', opacity: 1 }}
-                              exit={{ height: 0, opacity: 0 }}
-                              transition={{ duration: 0.3 }}>
-                              {Array.isArray(exp.description) ? (
-                                <ul>
-                                  {exp.description.map((item, i) => (
-                                    <motion.li 
-                                      key={i}
-                                      initial={{ opacity: 0, x: -20 }}
-                                      animate={{ opacity: 1, x: 0 }}
-                                      transition={{ delay: i * 0.1 }}>
-                                      {item}
-                                    </motion.li>
-                                  ))}
-                                </ul>
-                              ) : (
-                                <p>{exp.description}</p>
-                              )}
-                            </motion.div>
+                        <div style={{ flex: 1 }}>
+                          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                            <h3>{exp.company}</h3>
+                            <ChevronDown 
+                              size={20} 
+                              color="#a855f7" 
+                              style={{ 
+                                transform: expandedExp === index ? 'rotate(180deg)' : 'none',
+                                transition: 'transform 0.3s'
+                              }} 
+                            />
+                          </div>
+                          <div className="experience-subheader">
+                            <span className="experience-role">{exp.role}</span>
+                            <span className="experience-period-mobile">{exp.period}</span>
+                          </div>
+                          {exp.tags && (
+                            <div className="experience-tags">
+                              {exp.tags.map((tag, i) => (
+                                <span 
+                                  key={i}
+                                  className="experience-tag"
+                                  style={{ transition: 'all 0.2s ease' }}>
+                                  {tag}
+                                </span>
+                              ))}
+                            </div>
                           )}
-                        </AnimatePresence>
-                      </motion.div>
-                    </TimelineContent>
-                  </TimelineItem>
-                ))}
-              </Timeline>
-            </motion.div>
-          )}
-
-          {tab === 'projects' && (
-            <motion.div
-              key="projects"
-              className="projects-showcase"
-              variants={fadeVariant}
-              initial="hidden"
-              animate="show"
-              exit="hidden">
-              {projects.map((p, i) => (
-                <motion.div
-                  key={i}
-                  className="project-card-enhanced"
-                  initial={{ opacity: 0, y: 50, rotateX: -15 }}
-                  whileInView={{ 
-                    opacity: 1, 
-                    y: 0, 
-                    rotateX: 0,
-                    transition: {
-                      duration: 0.5,
-                      delay: i * 0.15,
-                      ease: "easeOut"
-                    }
-                  }}
-                  viewport={{ once: true, amount: 0.3 }}
-                  whileHover={{ 
-                    y: -10,
-                    transition: { duration: 0.3 }
-                  }}
-                  onClick={() => window.open(p.url, '_blank')}
-                  style={{ 
-                    cursor: 'pointer',
-                    '--accent-color': p.color
-                  }}>
-                  
-                  <div className="project-glow" style={{ background: `radial-gradient(circle at center, ${p.color}40, transparent)` }}></div>
-                  
-                  <motion.div 
-                    className="project-category"
-                    style={{ backgroundColor: p.color }}
-                    whileHover={{ scale: 1.05 }}>
-                    <Sparkles size={14} />
-                    <span>{p.category}</span>
-                  </motion.div>
-
-                  <div className="project-header">
-                    <h3>{p.name}</h3>
-                  </div>
-
-                  <p className="project-description">{p.description}</p>
-
-                  <div className="project-tech-stack">
-                    {p.tech.map((t, j) => (
-                      <motion.span 
-                        key={j}
-                        className="tech-pill"
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ 
-                          opacity: 1, 
-                          x: 0,
-                          transition: { delay: i * 0.15 + j * 0.08 }
-                        }}
-                        viewport={{ once: true }}
-                        whileHover={{ 
-                          scale: 1.1, 
-                          y: -3,
-                          boxShadow: `0 4px 12px ${p.color}60`
-                        }}>
-                        <Code2 size={12} />
-                        {t}
-                      </motion.span>
-                    ))}
-                  </div>
-
-                  <motion.div 
-                    className="project-hover-indicator"
-                    style={{ backgroundColor: p.color }}>
-                    Click to view on GitHub
-                  </motion.div>
-                </motion.div>
+                        </div>
+                      </div>
+                      
+                      {expandedExp === index && (
+                        <div className="experience-description">
+                          {Array.isArray(exp.description) ? (
+                            <ul>
+                              {exp.description.map((item, i) => (
+                                <li key={i}>
+                                  {item}
+                                </li>
+                              ))}
+                            </ul>
+                          ) : (
+                            <p>{exp.description}</p>
+                          )}
+                        </div>
+                      )}
+                    </div>
+                  </TimelineContent>
+                </TimelineItem>
               ))}
-            </motion.div>
-          )}
-        </AnimatePresence>
+            </Timeline>
+          </div>
+        )}
+
+        {tab === 'projects' && (
+          <div className="projects-showcase">
+            {projects.map((p, i) => (
+              <div
+                key={i}
+                className="project-card-enhanced"
+                onClick={() => window.open(p.url, '_blank')}
+                style={{ 
+                  cursor: 'pointer',
+                  '--accent-color': p.color
+                }}>
+                
+                <div className="project-glow" style={{ background: `radial-gradient(circle at center, ${p.color}40, transparent)` }}></div>
+                
+                <div className="project-category" style={{ backgroundColor: p.color }}>
+                  <Sparkles size={14} />
+                  <span>{p.category}</span>
+                </div>
+
+                <div className="project-header">
+                  <h3>{p.name}</h3>
+                </div>
+
+                <p className="project-description">{p.description}</p>
+
+                <div className="project-tech-stack">
+                  {p.tech.map((t, j) => (
+                    <span key={j} className="tech-pill">
+                      <Code2 size={12} />
+                      {t}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="project-hover-indicator" style={{ backgroundColor: p.color }}>
+                  Click to view on GitHub
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </main>
   );

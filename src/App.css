@@ -20,30 +20,6 @@ body {
   min-width: 100%;
 }
 
-/* progress scroll bar */
-
-.scroll-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, #a855f7, #3b82f6, #10b981);
-  transform-origin: 0%;
-  z-index: 1000;
-  box-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
-  animation: glow 2s ease-in-out infinite alternate;
-}
-
-@keyframes glow {
-  from {
-    box-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
-  }
-  to {
-    box-shadow: 0 0 20px rgba(168, 85, 247, 0.8), 0 0 30px rgba(59, 130, 246, 0.4);
-  }
-}
-
 .container {
   padding: 2rem 5vw;
   width: 100%;
@@ -109,16 +85,7 @@ body {
   position: relative;
 }
 
-.grid {
-  display: flex;
-  gap: 1rem;
-  width: 100%;
-  box-sizing: border-box;
-  flex-wrap: wrap;
-}
-
 /* projects section */
-
 .projects-showcase {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -138,6 +105,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  cursor: pointer;
 }
 
 .project-card-enhanced:hover {
@@ -258,46 +226,7 @@ body {
   backdrop-filter: blur(10px);
 }
 
-.card {
-  background: #222;
-  padding: 1rem;
-  border-radius: 10px;
-  box-shadow: 0 0 10px #000;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  cursor: pointer;
-  flex: 1;
-  min-width: 260px;
-  max-width: calc(33.33% - 1rem);
-  transform-style: preserve-3d;
-  perspective: 1000px;
-}
-
-.card:hover {
-  transform: translateY(-8px) rotateX(2deg);
-  box-shadow: 0 8px 25px rgba(168, 85, 247, 0.4), 0 0 40px rgba(168, 85, 247, 0.1);
-}
-
-.card h3 {
-  margin: 0 0 0.5rem;
-}
-
-.card .tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 0.8rem;
-}
-
-.card .tags span {
-  background: #a855f7;
-  color: white;
-  font-size: 0.75rem;
-  padding: 0.2rem 0.5rem;
-  border-radius: 4px;
-}
-
 /* about section */
-
 .about-content {
   display: flex;
   gap: 2rem;
@@ -325,12 +254,6 @@ body {
 }
 
 /* skills section */
-
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit);
-}
-
 .skill-category h4 {
   margin-bottom: 0.8rem;
   color: #bbb;
@@ -359,7 +282,6 @@ body {
 }
 
 /* experience page */
-
 .experience-section {
   max-width: 1000px;
   margin: 0;
@@ -380,6 +302,7 @@ body {
   border: 2px solid transparent;
   margin-bottom: 1rem;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .experience-card:hover {
@@ -409,6 +332,10 @@ body {
   background: white;
   padding: 5px;
   transition: transform 0.3s ease;
+}
+
+.company-logo:hover {
+  transform: rotate(360deg);
 }
 
 .company-logo img {
@@ -480,8 +407,7 @@ body {
   color: #ddd;
 }
 
-/* mui timeline css fix */
-
+/* MUI timeline fixes */
 .MuiTimeline-root {
   padding-left: 0 !important;
   padding-right: 0 !important;
@@ -510,7 +436,6 @@ body {
 }
 
 /* contact bar */
-
 .contact-bar {
   position: fixed;
   right: 2rem;
@@ -554,7 +479,6 @@ body {
   box-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
 }
 
-
 @media (max-width: 768px) {
   .container {
     padding: 1.5rem;
@@ -562,10 +486,6 @@ body {
 
   .title {
     font-size: 2rem;
-  }
-
-  .card {
-    max-width: 100%;
   }
 
   .projects-showcase {
